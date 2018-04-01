@@ -416,8 +416,10 @@ def count_items_bigger_than(numbers, threshold):
 
 def run_test_count_positive_sines():
     """ Tests the   count_positive_sines   function. """
+
+
     # ------------------------------------------------------------------
-    # TODO: 6. Implement this TEST function.
+    # done: 6. Implement this TEST function.
     #   It TESTS the  count_positive_sines  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond what we supplied.
     #
@@ -513,9 +515,21 @@ def run_test_count_positive_sines():
     print('        actual:  ', actual)
 
     # TO DO 6 (continued):  Add your 1 ADDITIONAL test here:
+    # Test 6:
+    expected = 1
+    actual = count_positive_sines([0,0,0,7])
+    print()
+    print('Test 6 expected:', expected)
+    print('       actual:  ', actual)
 
 
 def count_positive_sines(numbers):
+    tot = 0
+    for k in range(len(numbers)):
+        if math.sin(numbers[k]) > 0:
+            tot = tot + 1
+    return tot
+
     """
     What comes in:  An sequence of numbers.
     What goes out: Returns the number of items in the given sequence
@@ -539,7 +553,7 @@ def count_positive_sines(numbers):
       :type sequence: list or tuple (of numbers)
     """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # done 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
 
